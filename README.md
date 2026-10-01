@@ -8,6 +8,16 @@ Cyllaris is being built to let your chosen AI work with files and installed tool
 
 Its intended uses span personal projects, independent professional work, and business tasks. You control the permitted work; the AI uses local results to decide what to propose next.
 
+## Try the interactive demo
+
+[![Cyllaris AI conversation and Precision controls](cyllaris-demo.png)](https://brutal-brutalfoundry.github.io/Cyllaris/)
+
+**[Open the interactive demo](https://brutal-brutalfoundry.github.io/Cyllaris/)**. No download, installation or account required.
+
+Explore file organization, reporting, technical projects and IT support. Follow the AI conversation as permitted sample work runs and results return. Try Manual or Auto delivery, keep a chat draft, Pause or Stop, and accept or decline a request for additional access. The support example collects evidence before requesting repair permission.
+
+This is a browser simulation with fictional data. It accesses no local files, runs no commands and connects to no AI. Broader integration and permission-profile behavior require qualification; the technical development evidence is described separately below.
+
 ## Example: investigate, change, and check a local project
 
 In a documented Windows development run, the selected AI client worked through a disposable configuration project:
@@ -116,3 +126,4 @@ The documented bounded project loop is one completed qualification example; broa
 Public material explains responsibilities, tradeoffs, lifecycle concepts, and validation limits. Private source, exact authorization mechanisms, internal protocol fields, credentials, deployment identities, prompts, and operational records remain outside this repository.
 
 The practical goal is a controlled, understandable execution system whose records can explain what was requested, what was allowed, what actually ran, and what still needs a human decision.
+
