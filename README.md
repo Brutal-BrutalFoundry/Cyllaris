@@ -2,13 +2,56 @@
 
 **Private source · Public technical showcase**
 
-Designed and built by Christopher M. ("Brutal"), the developer behind BrutalFoundry.
+Designed and built by Christopher M., the developer behind BrutalFoundry.
 
-Cyllaris is a Windows execution-control project for AI-assisted work. Its central design question is how to accept useful requests from an AI client while keeping permission to execute, stop, and recover work under local operator control.
+Cyllaris is being built to let your chosen AI work with files and installed tools on your Windows PC, reducing the commands and results you carry manually between applications.
 
-This repository documents the engineering. The implementation remains private; this showcase does not distribute a runnable product.
+Its intended uses span personal projects, independent professional work, and business tasks. You control the permitted work; the AI uses local results to decide what to propose next.
 
-## The problem
+## Example: investigate, change, and check a local project
+
+In a documented Windows development run, the selected AI client worked through a disposable configuration project:
+
+1. Inspect the configuration with a known local tool.
+2. Apply a permitted correction in the project copy.
+3. Run the checker and return its result to the conversation.
+
+The three steps completed with corresponding execution results and delivery acknowledgments. The final configuration was checked, and the original and tool files remained unchanged according to the project's qualification records.
+
+This demonstrates a narrow local execution and result-delivery loop in one tested client configuration. It does not establish general application repair or support for every AI client. Final provider-side completion was not independently captured.
+
+## Availability
+
+Cyllaris is under development. The implementation remains private, and this repository provides a public technical showcase rather than a runnable download. Compatibility is established per tested configuration; broad browser and model support remains a product goal.
+
+## From a conversation to local work
+
+The intended experience follows a practical loop:
+
+1. You describe the task to your chosen AI and explicitly permit the relevant local work.
+2. The AI proposes a supported action. Cyllaris checks whether that action may run.
+3. The permitted tool runs on the PC and produces an observed result.
+4. Cyllaris returns that result to the correct conversation, so the AI can propose the next step within the valid scope.
+
+The AI supplies reasoning. Cyllaris supplies controlled local execution and result delivery. It does not replace the model, make an incorrect answer correct, or treat an AI request as permission.
+
+This is useful where a task depends on the state of your own machine: investigating a project with its installed checker, working through local file processing, or collecting diagnostic evidence before deciding what to change. These are intended applications, not claims that every tool or workflow is supported today.
+
+## Interface concept: one possible support role
+
+Cyllaris is intended for individuals, power users, personal projects, and businesses using AI for their own work. Its architecture separates model and browser adapters from local execution authority.
+
+This concept explores how Cyllaris could present a support task: what was reported, what the evidence shows, the exact proposed change, and what verification would establish. It is one possible interface, not a business-only product direction.
+
+[![Cyllaris role-specific interface concept for a fictional local support technician](cyllaris-workspace-concept.png)](cyllaris-workspace-concept.png)
+
+*Static concept; controls are inactive. Fictional case details illustrate one possible support workflow. Case queues, reporting, application retesting, and company integrations are proposed features, not a released support edition or live repair.*
+
+The concept separates a configuration check from the application retest needed before closing a case. Neither has been performed by this static interface. Branding and result-delivery controls do not confer execution authority. The qualified Core path remains Standard; selectable permission profiles and business workflow integrations require implementation and qualification.
+
+## Engineering the execution loop
+
+**Technology:** Python Core and native-host components; JavaScript browser adapters; HTML/CSS interface concepts on Windows.
 
 A client displaying a command, a machine executing it, and a client receiving its result are three different events. A lost connection can hide an execution that already happened. A browser reload can change the destination for a result. Retrying an uncertain operation can repeat a state change.
 
@@ -66,7 +109,7 @@ Development has progressed from a provider-specific bridge toward an independent
 
 Automated qualification exists for bounded Core, workflow, native-transport, and adapter behaviors. Loaded integration has also exposed failures that component checks did not establish: execution and acknowledgment can succeed while a larger inspect/apply/verify workflow still stops before completion.
 
-The current browser integration remains under qualification. Offline repairs and prepared candidates are not presented as stable-release or general provider compatibility evidence. This showcase makes no claim of a comprehensive security certification.
+The documented bounded project loop is one completed qualification example; broader browser integration remains under qualification. Offline repairs and prepared candidates are not presented as stable-release or general provider compatibility evidence. This showcase makes no claim of a comprehensive security certification.
 
 ## Scope of the public showcase
 
