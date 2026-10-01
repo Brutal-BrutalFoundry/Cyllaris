@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+ <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'">
+ <title>Cyllaris | Controlled AI work on your PC</title>
+ <meta name="description" content="Explore Cyllaris: controlled local execution and result delivery for your chosen AI. Interactive development demonstration by BrutalFoundry."><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="demo.css"><script src="preview.js" defer></script><script src="demo.js" defer></script><script src="workflow.js" defer></script>
+</head>
+<body>
+ <noscript><section><h1>Cyllaris by BrutalFoundry</h1><p>Cyllaris is being built to connect your chosen AI to permitted work on your Windows PC. Enable JavaScript to explore this simulated interactive demo. No local files are accessed and no commands run.</p><a href="https://github.com/Brutal-BrutalFoundry/Cyllaris">Read the technical showcase</a></section></noscript>
+ <main class="stage">
+  <div class="preview-label">CYLLARIS INTERACTIVE DEMO <span>Simulation · no access to your PC</span></div>
+  <article class="app" aria-label="Cyllaris precision interface">
+   <div class="instrument">
+    <header class="identity">
+     <div class="wordmark">CYLLARIS <span>by BrutalFoundry</span></div>
+     <div class="client"><i id="connection-dot" aria-hidden="true"></i><span id="connection-label">Connected</span></div>
+     <button id="details-open" class="quiet" aria-expanded="false" aria-controls="details-panel">Details <span aria-hidden="true">⌄</span></button>
+     <button id="connect" class="connection-button">Disconnect</button>
+    </header>
+    <div class="working-face">
+     <section id="status-card" class="task-face" aria-live="polite" aria-atomic="true">
+      <div class="state-line"><span id="core-label">PAUSED / READY</span><i aria-hidden="true"></i></div>
+      <h1 id="status-title">Ready.</h1>
+      <p class="task-title">Verify project configuration</p>
+      <p class="scope">Project workspace <span>·</span> bounded task</p>
+      <p id="status-description" class="status-description">Arm this task to allow its permitted actions and result delivery.</p>
+      <div id="outcome" hidden><strong id="outcome-title"></strong><span id="outcome-description"></span></div>
+     </section>
+     <div class="actions">
+      <button id="primary" class="primary"><span id="primary-symbol" class="play" aria-hidden="true"></span><span id="primary-text">Arm</span></button>
+      <button id="stop" class="stop"><span aria-hidden="true">■</span> Stop</button>
+     </div>
+    </div>
+    <div class="settings-band">
+     <section class="permission">
+      <div class="section-title" id="profile-label">Permission <i aria-hidden="true"></i></div>
+      <div class="profile-rail" role="radiogroup" aria-labelledby="profile-label" aria-describedby="profile-note">
+       <button data-profile="trusted" role="radio" aria-checked="false" disabled>Trusted</button>
+       <button id="permission-profile" data-profile="standard" role="radio" aria-checked="true">Standard</button>
+       <button data-profile="strict" role="radio" aria-checked="false" disabled>Strict</button>
+       <button data-profile="unrestricted" role="radio" aria-checked="false" disabled>Unrestricted</button>
+      </div>
+      <p id="profile-note">Standard available · other profiles pending</p>
+     </section>
+     <section class="delivery">
+      <div class="section-title">Delivery <i aria-hidden="true"></i></div>
+      <div class="delivery-switch" role="group" aria-label="Result delivery mode">
+       <button id="manual-mode" aria-pressed="false">Manual</button><button id="auto-mode" aria-pressed="true">Auto</button>
+      </div>
+      <div class="delay-row"><label for="delay">Delay</label><div class="delay-instrument"><input id="delay" type="range" min="0" max="60" step="0.5" value="2.5" aria-describedby="mode-help delay-error"><div class="graduations" aria-hidden="true"><span>0</span><span>15</span><span>30</span><span>45</span><span>60</span></div></div><output id="delay-value" for="delay">2.5 s</output></div>
+      <p id="delay-error" hidden>Use a delay from 0 to 60 seconds in half-second steps.</p>
+     </section>
+    </div>
+   </div>
+   <div class="context-line"><span id="mode-help">Auto sends eligible results after your chosen delay.</span><span id="footer-note">Only this task · Pause keeps results</span></div>
+   <section id="details-panel" class="details-panel" hidden aria-label="Cyllaris details">
+    <header><h2>Details</h2><button id="details-close">Close ×</button></header>
+    <nav class="detail-tabs" aria-label="Details sections"><button data-tab="permission" aria-pressed="true">Task & permission</button><button data-tab="history" aria-pressed="false">History</button><button data-tab="appearance" aria-pressed="false">Appearance</button><button data-tab="diagnostics" aria-pressed="false">Diagnostics</button></nav>
+    <div id="permission-content">
+     <h3 id="command-label">Proposed command · sample</h3><p id="command-stage"></p>
+     <pre class="command-readout" tabindex="0" aria-labelledby="command-label"><code id="command-text"></code></pre>
+     <p>This is the exact command text, with quotes and arguments preserved. Cyllaris framing is excluded. Public sample commands illustrate the selected task. This demo cannot read an AI proposal or execute commands.</p>
+     <h3>Sample task</h3><p>Inspect a disposable configuration, correct service.port from text "8080" to integer 8080, then verify the saved value. Three exact actions, thirty minutes, this project folder only. No network, installation, elevation or app launch.</p>
+     <h3>Effective profile: Standard</h3><p>Trusted, Strict and Unrestricted remain unavailable until their Core policies are implemented and qualified. A profile label and a theme never grant permission.</p>
+    </div>
+    <div id="history-content" hidden><h3>Sample history</h3><ul id="detail-history"></ul><p>Execution outcome and result delivery are separate facts. Unknown delivery is not permission to resend.</p></div>
+    <div id="appearance-content" hidden>
+     <div class="theme-presets"><label for="theme-preset">Theme</label><select id="theme-preset"><option value="precision">Precision</option><option value="foundry">Foundry</option><option value="midnight">Midnight</option></select></div>
+     <div class="theme-editor"><label>Name <input id="theme-name" type="text" maxlength="40"></label><label>Corner treatment <input id="theme-radius" type="range" min="8" max="24" step="1"><output id="theme-radius-value" for="theme-radius"></output></label><div id="theme-colors"></div></div>
+     <div class="theme-actions"><button id="theme-apply">Apply appearance</button><button id="theme-export">Export theme</button><label class="file-control">Import theme<input id="theme-import" type="file" accept=".json,application/json"></label></div>
+     <p id="theme-message" role="status"></p><p>Themes contain colors and corner size only. No scripts or imported markup. Appearance never changes state, permissions, delivery mode or delay. Files can be shared; native persistence is not connected.</p>
+    </div>
+    <div id="diagnostics-content" hidden><h3>Preview diagnostics</h3><p id="diagnostic-state"></p><p>No Core/native transport, execution, browser access, network calls or credentials exist in this preview. Every status and history row is a sample. Pause and Stop requests need separate confirmation; they do not automatically reset or retry.</p><p>Manual prepares a result in the provider’s input; the provider’s Send button remains the sending control. Delay range remains 0–60 seconds with half-second increments.</p></div>
+   </section>
+  </article>
+  <aside class="preview-controls" aria-label="Sample walkthrough controls"><label for="scenario">Preview state</label><select id="scenario"><option value="ready">Ready</option><option value="disconnected">Disconnected</option><option value="working">Working</option><option value="queued">Waiting for your draft</option><option value="countdown">Send delay</option><option value="manual">Manual result staged</option><option value="paused">Pause confirmed</option><option value="pausing">Pause requested</option><option value="complete">Task complete</option><option value="unknown">Delivery unconfirmed</option><option value="unavailable">Connection lost; reconcile</option><option value="stopping">Stop requested</option><option value="stopped">Stop confirmed</option></select><span>Controls change sample state only.</span><div class="walkthrough"><button id="sample-next" disabled>Arm to start the walkthrough</button><button id="sample-restart">Restart sample</button><p id="walkthrough-help" role="status">No commands run. Advance each sample event here; the slider sets the illustrated delay, not a running timer.</p></div></aside>
+ </main>
+</body>
+</html>
+
+
