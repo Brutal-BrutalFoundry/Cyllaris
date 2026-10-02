@@ -59,7 +59,7 @@
   $('delay').disabled=!editable||mode==='manual';
   $('mode-help').textContent=mode==='auto'?'Auto sends an eligible result after your chosen delay.':'Manual prepares the result in your chat. You use the chat’s Send button.';
   $('footer-note').textContent=['unknown','unavailable'].includes(current)?'Saved outcomes remain available. Reconnecting cannot authorize a retry.':'Only the displayed task is permitted. Pause keeps saved results.';
-  validate();activityRows();
+  validate();activityRows();window.cyllarisApplyEvidence?.();
  }
  function validate(){
   const value=$('delay').valueAsNumber,valid=Number.isFinite(value)&&value>=0&&value<=60&&Number.isInteger(value*2);
